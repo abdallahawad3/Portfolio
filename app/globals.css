@@ -33,7 +33,7 @@
   --darkgray: #333;
   --white: #ffffff;
   --black: #000000;
-  --background: oklch(17.629% 0.01404 258.383);
+  --background: #0d1117;
   --foreground: #9ba3b4;
   --foreground-intense: #e6eefa;
   --header-foreground: #c3d0e5;
@@ -42,7 +42,7 @@
   --link-foreground: #4daafc;
   --link-foreground-hover: #8fc3fe;
   --link-underline-background: var(--link-foreground);
-  --border-background: rgba(255, 255, 255, 0.12);
+  --border-background: #ffffff1f;
   --header-background: var(--background);
   --footer-background: var(--background);
   --button-primary-background: var(--accent-primary);

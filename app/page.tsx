@@ -1,6 +1,7 @@
 import About from "@/sections/About";
 import Experience from "@/sections/Expericance";
 import Hero from "@/sections/Hero";
+import Skills from "@/sections/Skills";
 
 const page = () => {
   return (
@@ -8,6 +9,7 @@ const page = () => {
       <Hero />
       <About />
       <Experience />
+      <Skills />
     </main>
   );
 };

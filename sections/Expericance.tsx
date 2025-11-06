@@ -8,27 +8,27 @@ const Experience = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    tl.to(".hero-text-scroll", {
+    tl.to(".experience-section h2", {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       duration: 4,
       scrollTrigger: {
-        trigger: ".experience-section h2",
-        start: "top 80%",
+        trigger: ".experience-section",
+        start: "top 50%",
         end: "bottom 50%",
         scrub: true,
       },
     }).from(".grid .custom-spotlight-card", {
       autoAlpha: 0,
-      y: 20,
-      duration: 1,
+      y: 100,
+      duration: 2,
       stagger: {
-        each: 0.4,
+        each: 0.7,
         from: "start",
       },
       scrollTrigger: {
         trigger: ".experience-section .grid",
         start: "top 80%",
-        end: "bottom 90%",
+        end: "bottom 60%",
         scrub: true,
       },
     });
@@ -36,12 +36,14 @@ const Experience = () => {
   return (
     <section className="my-20 experience-section border-t pt-2">
       <div className="my-container">
-        <div
-          style={{ clipPath: "polygon(50% 0, 50% 1%, 50% 100%, 50% 100%)" }}
-          className="hero-text-scroll flex justify-center"
-        >
-          <div className="hero-subtitle bg-darkblue w-fit py-4 px-10 text-4xl uppercase">
-            <h2>My Experience</h2>
+        <div className="hero-text-scroll flex justify-center">
+          <div className="hero-subtitle ">
+            <h2
+              className="bg-darkblue w-fit py-4 px-10 text-4xl uppercase"
+              style={{ clipPath: "polygon(50% 0, 50% 1%, 50% 100%, 50% 100%)" }}
+            >
+              My Experience
+            </h2>
           </div>
         </div>
 
