@@ -8,6 +8,41 @@ import Link from "next/link";
 gsap.registerPlugin(SplitText);
 const About = () => {
   useGSAP(() => {
+    const img = document.querySelector(".image") as HTMLElement | null;
+    if (!img) return;
+
+    const container = img.parentElement?.parentElement as HTMLElement;
+
+    const handleMove = (e: MouseEvent) => {
+      const rect = container.getBoundingClientRect();
+      const offsetX = e.clientX - rect.left - rect.width / 4;
+      const offsetY = e.clientY - rect.top - rect.height / 4;
+
+      const strength = 0.002;
+      gsap.to(img, {
+        x: offsetX * strength,
+        y: offsetY * strength,
+        rotationX: -offsetY * 0.0001,
+        rotationY: offsetX * 0.0001,
+        ease: "power3.out",
+        duration: 0.5,
+      });
+    };
+
+    const handleLeave = () => {
+      gsap.to(img, {
+        x: 0,
+        y: 0,
+        rotationX: 0,
+        rotationY: 0,
+        ease: "power3.out",
+        duration: 0.8,
+      });
+    };
+
+    container.addEventListener("mousemove", handleMove);
+    container.addEventListener("mouseleave", handleLeave);
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: "#about",
@@ -190,7 +225,7 @@ const About = () => {
               alt="This is Abdullah"
               width={550}
               height={550}
-              className="rounded-md object-contain h-auto w-full  mx-auto"
+              className="image rounded-md object-contain h-auto w-full  mx-auto"
             />
           </div>
         </div>

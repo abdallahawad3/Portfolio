@@ -1,6 +1,7 @@
 import About from "@/sections/About";
 import Experience from "@/sections/Expericance";
 import Hero from "@/sections/Hero";
+import Projects from "@/sections/Projects";
 import Skills from "@/sections/Skills";
 
 const page = () => {
@@ -10,6 +11,7 @@ const page = () => {
       <About />
       <Experience />
       <Skills />
+      <Projects />
     </main>
   );
 };

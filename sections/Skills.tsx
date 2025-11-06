@@ -132,7 +132,6 @@ const Skills = () => {
         trigger: "#skills h2",
         start: "top 80%",
         end: "bottom 50%",
-        markers: true,
         scrub: true,
       },
     });
