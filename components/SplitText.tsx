@@ -165,7 +165,13 @@ const MySplitText: React.FC<SplitTextProps> = ({
     switch (tag) {
       case "h1":
         return (
-          <h1 ref={ref} style={style} className={classes}>
+          <h1
+            aria-label={text}
+            aria-labelledby={text}
+            ref={ref}
+            style={style}
+            className={classes}
+          >
             {text}
           </h1>
         );

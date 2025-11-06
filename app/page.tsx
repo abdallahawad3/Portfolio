@@ -1,10 +1,12 @@
+import About from "@/sections/About";
 import Hero from "@/sections/Hero";
 
 const page = () => {
   return (
-    <div>
+    <main>
       <Hero />
-    </div>
+      <About />
+    </main>
   );
 };
 

@@ -5,7 +5,7 @@ import TextType from "@/components/TextType";
 
 const Hero = () => {
   return (
-    <div className="hero relative h-screen">
+    <section className="hero relative h-screen">
       <div
         className="-z-10"
         style={{ width: "100%", height: "100dvh", position: "absolute" }}
@@ -24,20 +24,23 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute top-40 left-1/2 transform -translate-x-1/2 ">
-        <MySplitText
-          text="Welcome to My Portfolio"
-          className="text-2xl md:text-5xl lg:text-7xl font-semibold text-center"
-          delay={100}
-          duration={0.6}
-          ease="power3.out"
-          splitType="chars"
-          from={{ opacity: 0, y: 40 }}
-          to={{ opacity: 1, y: 0 }}
-          threshold={0.1}
-          rootMargin="-100px"
-          textAlign="center"
-        />
+      <div className="absolute w-full my-container top-40 left-1/2 transform -translate-x-1/2 ">
+        <div className="flex justify-center">
+          <MySplitText
+            tag="h1"
+            text="Welcome to My Portfolio"
+            className="text-2xl md:text-5xl lg:text-7xl font-semibold text-center"
+            delay={100}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
+        </div>
         <br />
         <div className="flex justify-center">
           <TextType
@@ -49,7 +52,7 @@ const Hero = () => {
               "Tech Explorer & Creative Thinker 💡",
               "Turning Ideas Into Digital Reality 💻",
             ]}
-            className="text-2xl md:text-3xl font-medium text-center mt-4 px-2"
+            className="text-lg md:text-3xl font-medium text-center mt-4 px-2"
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}
@@ -57,7 +60,7 @@ const Hero = () => {
             cursorCharacter="_"
           />
         </div>
-        <div className="space-x-4 flex justify-center mt-8">
+        <div className="relative z-10 space-x-4 flex justify-center flex-wrap mt-8">
           <button
             className="mt-8 px-6 py-3 bg-button-background text-button-foreground rounded-lg text-lg font-semibold hover:bg-button-background/90 cursor-pointer transition-colors"
             onClick={() => {
@@ -82,7 +85,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -124,6 +124,11 @@
   --color-button-secondary-foreground: var(--button-secondary-foreground);
   --color-button-secondary-border: var(--button-secondary-border);
   --color-button-secondary-hover: var(--button-secondary-hover);
+  --color-darkblue: var(--darkblue);
+  --color-pink: var(--pink);
+  --color-purple: var(--purple);
+  --color-teal: var(--teal);
+  --color-darkpurple: var(--darkpurple);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -192,4 +197,157 @@ body::selection {
 
 .sm-scope .sm-toggle {
   color: var(--accent-secondary) !important;
+}
+
+#resume::after {
+  content: "Resume";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: var(--darkblue);
+  color: var(--header-foreground);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#resume::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid var(--darkblue);
+  z-index: 10;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+#resume:hover::before {
+  top: -3px;
+  visibility: visible;
+}
+
+#resume:hover::after {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.25rem 0.5rem;
+}
+
+#linkedin::after {
+  content: "LinkedIn";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: var(--darkblue);
+  color: var(--header-foreground);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#linkedin::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid var(--darkblue);
+  z-index: 10;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+#linkedin:hover::before {
+  top: -3px;
+  visibility: visible;
+}
+
+#linkedin:hover::after {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.25rem 0.5rem;
+}
+
+#github::after {
+  content: "GitHub";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background-color: var(--darkblue);
+  color: var(--header-foreground);
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 10;
+  transition: all 0.2s ease-in-out;
+}
+
+#github::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid var(--darkblue);
+  z-index: 10;
+  visibility: hidden;
+  transition: all 0.2s ease-in-out;
+}
+
+#github:hover::before {
+  top: -3px;
+  visibility: visible;
+}
+
+#github:hover::after {
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: auto;
+  padding: 0.25rem 0.5rem;
 }

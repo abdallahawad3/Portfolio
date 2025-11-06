@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import StaggeredMenu from "./StaggeredMenu";
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
   { label: "About", ariaLabel: "Learn about us", link: "/about" },
@@ -19,7 +21,14 @@ const Navbar = () => {
       <div className="hidden md:block navbar absolute w-[70%] border left-1/2 -translate-x-1/2 rounded-full top-2 z-10 border-b border-header-foreground/20  backdrop-blur-md">
         <header className=" my-container py-5 md:py-4 rounded ">
           <nav className="container-sm flex items-center justify-between">
-            <Link href={"/"}>Abdullah Awad</Link>
+            <Link
+              className="bg-linear-to-r from-header-foreground to-darkpurple bg-clip-text  text-transparent flex items-center text-xl font-bold"
+              href={"/"}
+            >
+              <span>&lt;</span>
+              Abdullah Awad
+              <span>&gt;</span>
+            </Link>
             <div className="flex gap-4">
               <ul className="flex items-center gap-2">
                 <li>
