@@ -72,7 +72,7 @@ const About = () => {
           scrollTrigger: {
             trigger: "#p3",
             start: "top 80%",
-            end: "top 40%",
+            end: "top 55%",
             scrub: true,
           },
         },
@@ -186,6 +186,7 @@ const About = () => {
           <div className="img justify-end mt-10 md:mt-0">
             <Image
               src="/assets/my.png"
+              loading="eager"
               alt="This is Abdullah"
               width={550}
               height={550}
