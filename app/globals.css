@@ -131,6 +131,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-poppins: "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+  --font-cairo: "Cairo", sans-serif;
+  --font-tajawal: "Tajawal", sans-serif;
 }
 
 .dark {
@@ -170,8 +174,7 @@
   --color-purple: var(--purple);
   --color-teal: var(--teal);
   --color-darkpurple: var(--darkpurple);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -431,4 +434,45 @@ body::selection {
   padding: 20px !important;
   box-shadow: var(--shadow-md);
   border-radius: 0.5rem;
+}
+
+[lang="en"] h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-poppins), sans-serif !important;
+}
+
+[lang="en"] body,
+p,
+span,
+a,
+li,
+div {
+  font-family: var(--font-inter), sans-serif !important;
+}
+
+[lang="ar"] h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-cairo), sans-serif !important;
+}
+[lang="ar"] body,
+p,
+span,
+a,
+li,
+div {
+  font-family: var(--font-tajawal), sans-serif !important;
+}
+
+.lottie-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  contain: strict; /* ✅ Prevents layout thrashing */
 }

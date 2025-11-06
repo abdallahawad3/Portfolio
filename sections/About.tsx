@@ -124,7 +124,7 @@ const About = () => {
         scrub: true,
       },
     });
-    tl.from(".buttons button", {
+    tl.from(".buttons", {
       autoAlpha: 0,
       y: 20,
       stagger: {
@@ -220,6 +220,7 @@ const About = () => {
           {/* Right side */}
           <div className="img justify-end mt-10 md:mt-0">
             <Image
+              sizes="(max-width: 768px) 100vw, 572px"
               src="/assets/my.png"
               loading="eager"
               alt="This is Abdullah"

@@ -2,7 +2,6 @@
 import ProjectComponent from "@/components/ProjectComponent";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-// import { use } from "react";
 
 const Projects = () => {
   useGSAP(() => {
@@ -13,7 +12,7 @@ const Projects = () => {
       scrollTrigger: {
         trigger: ".projects-section",
         start: "top 50%",
-        end: "bottom 50%",
+        end: "bottom 90%",
         scrub: true,
       },
     }).from(".projects-section .grid", {
@@ -29,12 +28,11 @@ const Projects = () => {
         start: "top 80%",
         end: "bottom 90%",
         scrub: true,
-        markers: true,
       },
     });
   });
   return (
-    <section className="my-container projects-section my-20">
+    <section className="my-container projects-section my-20 border-t pt-2">
       <h2
         style={{
           clipPath: "polygon(50% 0, 50% 1%, 50% 100%, 50% 100%)",

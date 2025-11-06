@@ -64,13 +64,15 @@ const ProjectComponent = () => {
       playOnce={false}
     >
       <div>
-        <Image
-          src={"/assets/my.png"}
-          alt="Ecommerce project"
-          width={300}
-          height={300}
-          className="image rounded-lg cursor-pointer"
-        />
+        <div className="flex justify-center">
+          <Image
+            src={"/assets/my.png"}
+            alt="Ecommerce project"
+            width={400}
+            height={300}
+            className="image object-contain rounded-lg cursor-pointer"
+          />
+        </div>
         <div className="p-4">
           <h3 className="text-2xl font-semibold">Ecommerce Website</h3>
           <p className="text-gray-600 mt-2">

@@ -12,13 +12,13 @@ const Hero = () => {
       >
         <LightRays
           raysOrigin="top-center"
-          raysColor="#00ffff"
+          raysColor="#058f2d"
           raysSpeed={1.5}
           lightSpread={1}
-          rayLength={0.5}
+          rayLength={2}
           followMouse={true}
-          mouseInfluence={0.1}
-          noiseAmount={0.1}
+          mouseInfluence={0.02}
+          noiseAmount={0.3}
           distortion={0.05}
           className="custom-rays"
         />
@@ -26,10 +26,19 @@ const Hero = () => {
 
       <div className="absolute w-full my-container top-40 left-1/2 transform -translate-x-1/2 ">
         <div className="flex justify-center">
+          <p className="w-fit text-white bg-[#ffffff0d] border p-2 px-4 rounded-full backdrop-blur-lg flex items-center justify-between text-lg">
+            Open To Work
+            <span
+              aria-label="hidden"
+              className="inline-block size-4 bg-green-500 rounded-full ml-2 animate-pulse"
+            />
+          </p>
+        </div>
+        <div className="text-center">
           <MySplitText
             tag="h1"
             text="Welcome to My Portfolio"
-            className="text-2xl md:text-5xl lg:text-7xl font-semibold text-center"
+            className="text-2xl mt-4 md:text-3xl lg:text-4xl font-semibold text-center"
             delay={100}
             duration={0.6}
             ease="power3.out"
@@ -40,8 +49,23 @@ const Hero = () => {
             rootMargin="-100px"
             textAlign="center"
           />
+          <br aria-hidden="true" />
+          <MySplitText
+            tag="h1"
+            text="My name is Abdullah Awad. I develop modern web applications with performance, structure, and scalability in mind."
+            className="max-w-[70%] text-xl md:text-2xl lg:text-3xl font-semibold text-center"
+            delay={20}
+            duration={0.6}
+            ease="power3.out"
+            splitType="chars"
+            from={{ opacity: 0, y: 40 }}
+            to={{ opacity: 1, y: 0 }}
+            threshold={0.1}
+            rootMargin="-100px"
+            textAlign="center"
+          />
         </div>
-        <br />
+        <br aria-hidden="true" />
         <div className="flex justify-center">
           <TextType
             text={[
@@ -52,7 +76,7 @@ const Hero = () => {
               "Tech Explorer & Creative Thinker 💡",
               "Turning Ideas Into Digital Reality 💻",
             ]}
-            className="text-lg md:text-3xl font-medium text-center mt-4 px-2"
+            className="text-lg md:text-3xl font-medium text-center mt-2 px-2"
             typingSpeed={75}
             pauseDuration={1500}
             showCursor={true}
@@ -60,7 +84,7 @@ const Hero = () => {
             cursorCharacter="_"
           />
         </div>
-        <div className="relative z-10 space-x-4 flex justify-center flex-wrap mt-8">
+        <div className="relative lg:bottom-10 space-x-4 flex justify-center flex-wrap mt-8">
           <button
             className="mt-8 px-6 py-3 bg-button-background text-button-foreground rounded-lg text-lg font-semibold hover:bg-button-background/90 cursor-pointer transition-colors"
             onClick={() => {

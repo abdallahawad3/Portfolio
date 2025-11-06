@@ -1,9 +1,13 @@
 "use client";
-import GlassIcons from "@/components/GlassIcons";
 import LogoLoop from "@/components/LogoLoop";
 import { useGSAP } from "@gsap/react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+const DotLottieReact = dynamic(
+  () =>
+    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
 import gsap from "gsap";
+import dynamic from "next/dynamic";
 import {
   SiHtml5,
   SiCss3,

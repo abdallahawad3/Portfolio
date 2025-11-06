@@ -1,15 +1,27 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Poppins, Inter, Cairo, Tajawal } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const poppinsSans = Poppins({
+  variable: "--font-poppins-sans",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: "400",
+});
+const cairo = Cairo({
+  variable: "--font-cairo",
+  subsets: ["latin"],
+  weight: "400",
+});
+const tajawal = Tajawal({
+  variable: "--font-tajawal",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +37,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`overflow-x-hidden ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`overflow-x-hidden ${poppinsSans.variable} ${inter.variable} ${cairo.variable} ${tajawal.variable} antialiased`}
       >
         <Navbar />
         {children}

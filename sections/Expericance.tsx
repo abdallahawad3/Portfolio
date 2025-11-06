@@ -2,8 +2,12 @@
 import SpotlightCard from "@/components/SpotlightCard";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap/all";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
+import dynamic from "next/dynamic";
+const DotLottieReact = dynamic(
+  () =>
+    import("@lottiefiles/dotlottie-react").then((mod) => mod.DotLottieReact),
+  { ssr: false }
+);
 const Experience = () => {
   useGSAP(() => {
     const tl = gsap.timeline();

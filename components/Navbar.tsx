@@ -1,8 +1,6 @@
 "use client";
 import Link from "next/link";
 import StaggeredMenu from "./StaggeredMenu";
-import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
   { label: "About", ariaLabel: "Learn about us", link: "/about" },
