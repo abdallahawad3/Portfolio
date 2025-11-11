@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Abdullah Awad Portfolio",
     images: [
       {
-        url: "assets/my.png",
+        url: "https://abdullahawad.me/assets/my.png",
         width: 1200,
         height: 630,
         alt: "Abdullah Awad Portfolio",
@@ -37,11 +37,17 @@ export const metadata: Metadata = {
     type: "website",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary_large_image", // ✅ Required for big preview
     title: "Abdullah Awad - Portfolio",
     description:
-      "Welcome to my portfolio website! I'm Abdullah Awad, a passionate software developer specializing in creating dynamic and responsive web applications. Explore my projects, skills, and experience as you navigate through my site.",
-    images: ["assets/my.png"],
+      "Welcome to my portfolio website! I'm Abdullah Awad, a passionate software developer specializing in creating dynamic and responsive web applications.",
+    site: "@abdullahawad", // optional
+    creator: "@abdullahawad", // optional
+    images: ["https://abdullahawad.me/assets/my.png"],
+  },
+
+  alternates: {
+    canonical: "https://abdullahawad.me",
   },
   keywords: [
     "Abdullah Awad",
