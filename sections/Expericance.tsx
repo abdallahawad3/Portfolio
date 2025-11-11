@@ -12,16 +12,7 @@ const Experience = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
 
-    tl.to(".experience-section h2", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 4,
-      scrollTrigger: {
-        trigger: ".experience-section",
-        start: "top 50%",
-        end: "bottom 50%",
-        scrub: true,
-      },
-    }).from(".grid .custom-spotlight-card", {
+    tl.from(".grid .custom-spotlight-card", {
       autoAlpha: 0,
       y: 100,
       duration: 2,
@@ -42,10 +33,7 @@ const Experience = () => {
       <div className="my-container">
         <div className="hero-text-scroll flex justify-center">
           <div className="hero-subtitle ">
-            <h2
-              className="bg-darkblue w-fit py-4 px-10 text-4xl uppercase"
-              style={{ clipPath: "polygon(50% 0, 50% 1%, 50% 100%, 50% 100%)" }}
-            >
+            <h2 className="bg-darkblue w-fit py-4 px-10 text-4xl uppercase">
               My Experience
             </h2>
           </div>

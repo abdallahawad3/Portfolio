@@ -6,16 +6,7 @@ import gsap from "gsap";
 const Projects = () => {
   useGSAP(() => {
     const tl = gsap.timeline();
-    tl.to(".projects-section h2", {
-      clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
-      duration: 4,
-      scrollTrigger: {
-        trigger: ".projects-section",
-        start: "top 50%",
-        end: "bottom 90%",
-        scrub: true,
-      },
-    }).from(".projects-section .grid", {
+    tl.from(".projects-section .grid", {
       autoAlpha: 0,
       y: 100,
       duration: 2,
@@ -33,12 +24,7 @@ const Projects = () => {
   });
   return (
     <section className="my-container projects-section my-20 border-t pt-2">
-      <h2
-        style={{
-          clipPath: "polygon(50% 0, 50% 1%, 50% 100%, 50% 100%)",
-        }}
-        className="text-4xl font-bold mb-10 w-fit mx-auto py-4 px-10 lg:px-20 text-center bg-darkblue uppercase"
-      >
+      <h2 className="text-4xl font-bold mb-10 w-fit mx-auto py-4 px-10 lg:px-20 text-center bg-darkblue uppercase">
         My Projects
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2">
