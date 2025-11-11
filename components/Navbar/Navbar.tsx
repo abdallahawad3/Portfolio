@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
-import StaggeredMenu from "./StaggeredMenu";
+import StaggeredMenu from "../StaggeredMenu";
+import MobileNavbar from "./Mobile";
 const menuItems = [
   { label: "Home", ariaLabel: "Go to home page", link: "/" },
   { label: "About", ariaLabel: "Learn about us", link: "/about" },
@@ -27,6 +28,7 @@ const Navbar = () => {
               Abdullah Awad
               <span>&gt;</span>
             </Link>
+
             <div className="flex gap-4">
               <ul className="flex items-center gap-2">
                 <li>
@@ -56,21 +58,7 @@ const Navbar = () => {
         </header>
       </div>
 
-      <div className="md:hidden">
-        <StaggeredMenu
-          isFixed={true}
-          position="right"
-          items={menuItems}
-          socialItems={socialItems}
-          displaySocials={true}
-          displayItemNumbering={true}
-          menuButtonColor="#fff"
-          openMenuButtonColor="#fff"
-          changeMenuColorOnOpen={true}
-          colors={["#B19EEF", "#5227FF"]}
-          accentColor="#ff6b6b"
-        />
-      </div>
+      <MobileNavbar />
     </div>
   );
 };

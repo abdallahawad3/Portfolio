@@ -4,7 +4,7 @@ import Experience from "@/sections/Expericance";
 import Footer from "@/sections/Footer";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
-import Skills from "@/sections/Skills";
+// import Skills from "@/sections/Skills";
 
 const page = () => {
   return (
@@ -12,7 +12,7 @@ const page = () => {
       <Hero />
       <About />
       <Experience />
-      <Skills />
+      {/* <Skills /> */}
       <Projects />
       <Contact />
       <Footer />

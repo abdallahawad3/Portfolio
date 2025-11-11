@@ -133,8 +133,7 @@
   --sidebar-ring: oklch(0.708 0 0);
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
-  --font-cairo: "Cairo", sans-serif;
-  --font-tajawal: "Tajawal", sans-serif;
+  --font-barlow: "Barlow Condensed", sans-serif;
 }
 
 .dark {
@@ -206,6 +205,8 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --font-barlow: "Barlow Condensed", sans-serif;
 }
 
 body::selection {
@@ -223,7 +224,7 @@ body::selection {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 30%;
+  height: 10%;
   background: linear-gradient(
     to bottom,
     transparent 0%,
@@ -421,9 +422,6 @@ body::selection {
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
   body {
     @apply bg-background text-foreground;
   }
@@ -436,43 +434,40 @@ body::selection {
   border-radius: 0.5rem;
 }
 
-[lang="en"] h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-poppins), sans-serif !important;
-}
-
-[lang="en"] body,
-p,
-span,
-a,
-li,
-div {
-  font-family: var(--font-inter), sans-serif !important;
-}
-
-[lang="ar"] h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-cairo), sans-serif !important;
-}
-[lang="ar"] body,
-p,
-span,
-a,
-li,
-div {
-  font-family: var(--font-tajawal), sans-serif !important;
-}
-
 .lottie-container canvas {
   width: 100% !important;
   height: 100% !important;
   contain: strict; /* ✅ Prevents layout thrashing */
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  height: 200px;
+  width: 200px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+text {
+  fill: #ff9800;
+  font-family: var(--font-inter), sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  letter-spacing: 10px;
+}
+
+.circleText {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  overflow: visible;
+  transform-origin: center center;
+  stroke-opacity: 0.5;
 }

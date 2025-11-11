@@ -142,7 +142,7 @@ const About = () => {
   return (
     <section>
       <div
-        className="my-container py-10 mb-20 border-4 border-gray-800 rounded-md relative"
+        className="my-container py-10 my-20 border-4 border-gray-800 rounded-md relative"
         id="about"
       >
         <div className="absolute top-2 left-2 flex space-x-1">

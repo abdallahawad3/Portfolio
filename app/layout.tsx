@@ -1,25 +1,16 @@
 import type { Metadata } from "next";
-import { Poppins, Inter, Cairo, Tajawal } from "next/font/google";
+import { Inter, Barlow_Condensed } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-const poppinsSans = Poppins({
-  variable: "--font-poppins-sans",
+import Navbar from "@/components/Navbar/Navbar";
+
+const barlowCondensed = Barlow_Condensed({
+  variable: "--font-barlow",
   subsets: ["latin"],
   weight: "400",
 });
 
 const inter = Inter({
   variable: "--font-inter",
-  subsets: ["latin"],
-  weight: "400",
-});
-const cairo = Cairo({
-  variable: "--font-cairo",
-  subsets: ["latin"],
-  weight: "400",
-});
-const tajawal = Tajawal({
-  variable: "--font-tajawal",
   subsets: ["latin"],
   weight: "400",
 });
@@ -37,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`overflow-x-hidden ${poppinsSans.variable} ${inter.variable} ${cairo.variable} ${tajawal.variable} antialiased`}
+        className={`overflow-x-hidden ${inter.variable} ${barlowCondensed.variable} antialiased`}
       >
         <Navbar />
         {children}

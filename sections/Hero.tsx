@@ -1,11 +1,78 @@
 "use client";
 import LightRays from "@/components/LightRays";
-import MySplitText from "@/components/SplitText";
-import TextType from "@/components/TextType";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap/all";
+import Image from "next/image";
 
 const Hero = () => {
+  useGSAP(() => {
+    const tl = gsap.timeline();
+    tl.from(".hero p", {
+      scale: 0,
+      opacity: 0,
+      duration: 1,
+      ease: "bounce.out",
+    }).from(
+      "img",
+      {
+        autoAlpha: 0,
+        scale: 0,
+        duration: 1,
+        ease: "bounce.out",
+      },
+      "<"
+    );
+    tl.from(".hero h1 strong", {
+      y: -200,
+      opacity: 0,
+      duration: 1,
+      ease: "bounce.out",
+      stagger: 0.2,
+    })
+      .from(".hero h1 span", {
+        y: 200,
+        rotate: -50,
+        opacity: 0,
+        duration: 1,
+        ease: "bounce.out",
+      })
+      .from(".list-mobile", {
+        x: -200,
+        opacity: 0,
+        duration: 1,
+        ease: "bounce.out",
+      })
+      .from(".list-mobile li", {
+        x: -100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
+      })
+      .from(".list", {
+        x: 200,
+        opacity: 0,
+        duration: 1,
+        ease: "bounce.out",
+      })
+
+      .from(".list li", {
+        x: 100,
+        opacity: 0,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
+      });
+    gsap.from(".circleText", {
+      rotation: -360,
+      transformOrigin: "50% 50%",
+      duration: 20,
+      ease: "none",
+      repeat: -1,
+    });
+  }, []);
   return (
-    <section className="hero relative h-screen">
+    <section className="hero relative  h-screen overflow-hidden">
       <div
         className="-z-10"
         style={{ width: "100%", height: "100dvh", position: "absolute" }}
@@ -24,89 +91,73 @@ const Hero = () => {
         />
       </div>
 
-      <div className="absolute w-full my-container top-40 left-1/2 transform -translate-x-1/2 ">
-        <div className="flex justify-center">
-          <p className="w-fit text-white bg-[#ffffff0d] border p-2 px-4 rounded-full backdrop-blur-lg flex items-center justify-between text-lg">
-            Open To Work
-            <span
-              aria-label="hidden"
-              className="inline-block size-4 bg-green-500 rounded-full ml-2 animate-pulse"
-            />
+      <div className="absolute  w-full h-full my-container top-40 left-1/2 transform -translate-x-1/2 ">
+        <div className="relative h-full">
+          <p className="text-xl md:text-3xl relative -top-9 lg:text-4xl font-extrabold text-center  mt-10 md:mt-0 lg:mb-6 bg-linear-to-r from-header-foreground to-darkpurple bg-clip-text text-transparent">
+            Hi, There I&apos;m Abdullah Awad
           </p>
+          <div className="md:hidden">
+            <h1 className="text-center text-5xl font-extrabold font-barlow">
+              Front-End Developer
+            </h1>
+            <Image
+              src={"/assets/hero.png"}
+              alt="Hero Image"
+              width={1000}
+              height={1000}
+              className="mx-auto pointer-events-none w-full max-w-lg object-contain"
+            />
+          </div>
+          <div className="hidden  md:flex justify-center gap-2 w-full lg:items-center lg:w-fit h-full">
+            <h1 className="text-center text-6xl md:text-5xl lg:text-[170px] font-extrabold  font-barlow">
+              <strong className="lg:absolute lg:top-0 lg:left-55 z-10">
+                Front
+              </strong>
+              <strong className="lg:absolute lg:top-0 lg:right-77 z-10">
+                End
+              </strong>
+              <span className="lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-35 -rotate-5 z-10">
+                Developer
+              </span>
+            </h1>
+            <Image
+              src={"/assets/hero.png"}
+              alt="Hero Image"
+              width={1000}
+              height={1000}
+              className="hidden md:block mx-auto pointer-events-none w-full max-w-lg lg:max-w-2xl object-contain absolute left-1/2 -translate-x-1/2 -top-10 "
+            />
+          </div>
         </div>
-        <div className="text-center">
-          <MySplitText
-            tag="h1"
-            text="Welcome to My Portfolio"
-            className="text-2xl mt-4 md:text-3xl lg:text-4xl font-semibold text-center"
-            delay={100}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-          />
-          <br aria-hidden="true" />
-          <MySplitText
-            tag="h1"
-            text="My name is Abdullah Awad. I develop modern web applications with performance, structure, and scalability in mind."
-            className="max-w-[70%] text-xl md:text-2xl lg:text-3xl font-semibold text-center"
-            delay={20}
-            duration={0.6}
-            ease="power3.out"
-            splitType="chars"
-            from={{ opacity: 0, y: 40 }}
-            to={{ opacity: 1, y: 0 }}
-            threshold={0.1}
-            rootMargin="-100px"
-            textAlign="center"
-          />
+      </div>
+      <div>
+        <div className="container">
+          <svg className="circleText " viewBox="0 0 500 500" data-duration="5">
+            <path
+              id="textcircle"
+              fill="none"
+              stroke="#FF9800"
+              strokeWidth="5"
+              data-duration="5"
+              d="M50,250c0-110.5,89.5-200,200-200s200,89.5,200,200s-89.5,200-200,200S50,360.5,50,250"
+            ></path>
+
+            <text dy="-25">
+              <textPath xlinkHref="#textcircle">
+                . FRONTEND . REACT . NODE . EXPRESS{" "}
+              </textPath>
+            </text>
+          </svg>
         </div>
-        <br aria-hidden="true" />
-        <div className="flex justify-center">
-          <TextType
-            text={[
-              "Full-Stack Developer 🚀",
-              "React & Node.js Engineer ⚛️",
-              "Spring Boot Backend Wizard 🔗",
-              "Open Source Enthusiast 🌍",
-              "Tech Explorer & Creative Thinker 💡",
-              "Turning Ideas Into Digital Reality 💻",
-            ]}
-            className="text-lg md:text-3xl font-medium text-center mt-2 px-2"
-            typingSpeed={75}
-            pauseDuration={1500}
-            showCursor={true}
-            initialDelay={1500}
-            cursorCharacter="_"
-          />
-        </div>
-        <div className="relative lg:bottom-10 space-x-4 flex justify-center flex-wrap mt-8">
-          <button
-            className="mt-8 px-6 py-3 bg-button-background text-button-foreground rounded-lg text-lg font-semibold hover:bg-button-background/90 cursor-pointer transition-colors"
-            onClick={() => {
-              const aboutSection = document.getElementById("about");
-              if (aboutSection) {
-                aboutSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            View My Work
-          </button>
-          <button
-            className="mt-8 px-6 py-3 bg-gray-800 text-button-secondary-foreground rounded-lg text-lg font-semibold hover:bg-gray-800/90 cursor-pointer transition-colors"
-            onClick={() => {
-              const aboutSection = document.getElementById("about");
-              if (aboutSection) {
-                aboutSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-          >
-            Get in Touch
-          </button>
+        <div className="list hidden lg:block bg-amber-100 text-accent-foreground absolute  lg:top-25 p-2 rounded-[1px] lg:right-10">
+          <ol>
+            <li>⦿ Full-Stack Web Development</li>
+            <li>⦿ Responsive Web Design</li>
+            <li>⦿ Performance Optimization</li>
+            <li>⦿ Cross-Browser Compatibility</li>
+            <li>⦿ Version Control with Git</li>
+            <li>⦿ API Integration</li>
+          </ol>
         </div>
       </div>
     </section>
